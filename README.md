@@ -13,4 +13,6 @@ Command line options:
     *For current development phase only*
     * -b - display all the lines in the file but only number non blank lines
     * -n - display all the lines in the file, numbered
-    
+
+Usage: 
+    * cat <options> <file1> <file2>
