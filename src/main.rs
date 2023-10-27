@@ -17,13 +17,21 @@ fn main() {
 
     println!("We shall process file {}", filename);
     let file_contents = fs::read_to_string(filename).expect("Unable to open file specified");
-    if display_options == "-n" {
-        let lines = file_contents.split("\n");
-        for (i, line) in lines.enumerate() {
-            println!("{} {}", i, line);
+
+    // add a match construct here
+    match display_options.as_str() {
+        "-n" => {
+            let lines = file_contents.split("\n");
+            for (i, line) in lines.enumerate() {
+                println!("{} {}", i, line);
+            }
+        },
+        "" => {
+            println!("{file_contents}");
+        }, 
+        _ => {
+            // we don't cover this yet
         }
-    } else {
-        println!("{file_contents}");
     }
 }
 
